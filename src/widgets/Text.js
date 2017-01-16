@@ -9,6 +9,7 @@ type LogData = {
 };
 
 export default class Text extends Node {
+  children: (Node|string)[];
   style: TextStyle = null;
 
   append(child: TextChild): void {
@@ -25,7 +26,7 @@ export default class Text extends Node {
 
   getLogData(): LogData {
     let strings: string[] = [];
-    let styles: TextStyle = [];
+    let styles: TextStyle[] = [];
 
     this.children.forEach(child => {
       if (child instanceof Text) {
