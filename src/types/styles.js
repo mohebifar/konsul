@@ -1,7 +1,4 @@
-export type TextStyle = null | {
-  fontSize?: string,
-  lineHeight?: string | number,
-  fontFamily?: string,
+export type BoxStyle = null | {
   padding?: string,
   margin?: string,
   textShadow?: string,
@@ -11,4 +8,16 @@ export type TextStyle = null | {
   backgroundImage?: string,
   backgroundPosition?: string,
   backgroundSize?: string
+}
+
+export type TextStyle = null | BoxStyle & {
+  fontSize?: string,
+  lineHeight?: string | number,
+  fontFamily?: string,
+  color?: string
+};
+
+export type ImageStyle = null | BoxStyle & {
+  width?: number,
+  height?: number
 };
