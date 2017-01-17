@@ -6,7 +6,8 @@
   "scripts": {
     "babel": "babel src --out-dir lib",
     "watch": "babel src --watch --out-dir lib",
-    "prepublish": "npm run babel",
+    "lint": "semistandard",
+    "prepublish": "npm run lint && npm run babel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,16 @@
   ],
   "author": "Mohamad Mohebifar",
   "license": "MIT",
+  "semistandard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype"
+    ],
+    "ignore": [
+      "lib",
+      "examples"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/mohebifar/konsul/issues"
   },
@@ -29,10 +40,14 @@
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-plugin-typecheck": "^3.9.0",
     "babel-preset-es2015": "^6.18.0",
-    "babel-preset-stage-0": "^6.16.0"
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.13.1",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "semistandard": "^9.2.1"
   }
 }

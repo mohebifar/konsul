@@ -1,21 +1,19 @@
 import Node from './widgets/Node';
-import EventEmitter from 'eventemitter3';
 import type { WidgetRegisterContract } from './types/widgets';
 import type { KonsulOptions } from './types/konsul';
 
 const defaultOptions: KonsulOptions = {
   clear: true,
-  renderWaitTolerance: 50
+  renderDebounce: 10
 };
 
-export default class Konsul extends EventEmitter {
-  nodes: Node[] = [];
+export default class Konsul extends Node {
   options: KonsulOptions;
   rendered: boolean = false;
   lastTime: number;
 
-  constructor(options: KonsulOptions = {}): void {
-    super();
+  constructor (options: KonsulOptions = {}): void {
+    super(null, null);
 
     this.options = {
       ...defaultOptions,
@@ -25,23 +23,19 @@ export default class Konsul extends EventEmitter {
     this.registerListeners();
   }
 
-  append(node: Node): void {
-    this.nodes.push(node);
-  }
-
-  render(clear: boolean = true): void {
+  render (clear: boolean = true): void {
     this.rendered = true;
 
     if (this.options.clear && clear) {
       this.clear();
     }
 
-    this.nodes.forEach(node => {
-      node.render();
+    this.children.forEach(element => {
+      element.render();
     });
   }
 
-  requestRender(): void {
+  requestRender (): void {
     if (!this.rendered || this.lastTime === 0) {
       return;
     }
@@ -51,14 +45,14 @@ export default class Konsul extends EventEmitter {
     setTimeout(() => {
       this.lastTime = 0;
       this.render();
-    }, this.options.renderWaitTolerance);
+    }, this.options.renderDebounce);
   }
 
-  clear(): void {
+  clear (): void {
     console.clear();
   }
 
-  registerWidget(registration: WidgetRegisterContract): void {
+  registerWidget (registration: WidgetRegisterContract): void {
     const { name, widget: Widget } = registration;
     if (typeof this[name] !== 'undefined') {
       throw new Error(`'${name}' widget has already been registered`);
@@ -67,19 +61,19 @@ export default class Konsul extends EventEmitter {
     const mapOptions: Object = registration.options ? registration.options : {};
 
     this[name] = (options: Object = {}) => {
-      const node = new Widget(this);
+      const element = new Widget(this);
 
       Object.keys(options).forEach(key => {
         if (mapOptions[key]) {
-          mapOptions[key](options[key], node);
+          mapOptions[key](options[key], element);
         }
       });
 
-      return node;
+      return element;
     };
   }
 
-  registerListeners(): void {
+  registerListeners (): void {
     this.addListener('shouldRender', () => {
       this.requestRender();
     });
