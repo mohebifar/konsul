@@ -1,6 +1,6 @@
 import type { Dimension } from '../types/images';
 
-export function calculateDimensions(requestedDimension: Dimension, actualDimension?: Dimension) {
+export function calculateDimensions (requestedDimension: Dimension, actualDimension?: Dimension) {
   let width = 0;
   let height = 0;
 

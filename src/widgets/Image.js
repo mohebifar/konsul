@@ -18,7 +18,7 @@ export default class Image extends Text {
   requestedStyle: ImageStyle = {};
   style: TextStyle = defaultStyle;
 
-  constructor(konsul): void {
+  constructor (konsul): void {
     super(konsul);
 
     this.image = new BaseImage();
@@ -32,7 +32,7 @@ export default class Image extends Text {
     });
   }
 
-  setSource(url: string): void {
+  setSource (url: string): void {
     this.url = url;
     this.image.src = this.url;
 
@@ -41,12 +41,12 @@ export default class Image extends Text {
     }
   }
 
-  setStyle(style: ImageStyle = {}): void {
-    this.requestedStyle = style ? style : {};
+  setStyle (style: ImageStyle = {}): void {
+    this.requestedStyle = style;
     this.updateStyle();
   }
 
-  updateStyle() {
+  updateStyle () {
     const { width, height }: Dimension = calculateDimensions(this.requestedStyle, this.dimension);
     const textStyle: TextStyle = {
       ...this.requestedStyle,
@@ -54,7 +54,7 @@ export default class Image extends Text {
       padding: `${Math.floor(height / 2)}px ${Math.floor(width / 2)}px`,
       lineHeight: `${height}px`,
       background: `url('${this.url}')`,
-      backgroundSize: `${width}px ${height}px`,
+      backgroundSize: `${width}px ${height}px`
     };
 
     this.konsul.emit('shouldRender');
