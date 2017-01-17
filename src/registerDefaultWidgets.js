@@ -17,11 +17,29 @@ const widgetsRegistration: WidgetRegisterContract[] = [
       style: (style: Object, node: Widgets.Image) => node.setStyle(style),
       source: (url: string, node: Widgets.Image) => node.setSource(url)
     }
+  },
+  {
+    widget: Widgets.Container,
+    name: 'container'
+  },
+  {
+    widget: Widgets.Group,
+    name: 'group',
+    options: {
+      name: (name: string, node: Widgets.Group) => node.setName(name)
+    }
+  },
+  {
+    widget: Widgets.Button,
+    name: 'button',
+    options: {
+      label: (label: string, node: Widgets.Group) => node.setLabel(label)
+    }
   }
 ];
 
-export default function registerDefaultWidgets(konsul: Konsul) {
+export default function registerDefaultWidgets (konsul: Konsul) {
   widgetsRegistration.forEach(registration => {
     konsul.registerWidget(registration);
-  })
+  });
 }
