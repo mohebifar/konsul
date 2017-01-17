@@ -1,13 +1,16 @@
 {
   "name": "konsul",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "The power you never had with console.log",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "babel": "babel src --out-dir lib",
-    "watch": "babel src --watch --out-dir lib",
+    "watch": "babel src --watch --out-dir lib --ignore react",
+    "watch-react": "babel src/react --watch --out-dir lib-react/lib --ignore node_modules",
     "lint": "semistandard",
-    "prepublish": "npm run lint && npm run babel",
+    "build": "rm -rf ./lib/* && babel src -d lib --ignore react",
+    "build-react": "rm -rf ./lib-react/* && babel src/react -d lib-react/lib --ignore node_modules && cp src/react/package.json lib-react/",
+    "prepublish": "npm run lint && npm run build",
+    "publish-react": "npm run lint && npm run build-react && npm publish lib-react",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +37,9 @@
   "bugs": {
     "url": "https://github.com/mohebifar/konsul/issues"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/mohebifar/konsul#readme",
   "dependencies": {
     "eventemitter3": "^2.0.2"

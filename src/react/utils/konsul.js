@@ -1,11 +1,8 @@
-import Node from '../../widgets/Node';
-import Konsul from '../../Konsul';
-
 const STATUS_NO_CHANGE = 0;
 const STATUS_CREATED = 1;
 const STATUS_UPDATED = 2;
 
-export function makeElement (node: Object, konsul: Konsul) {
+export function makeElement (node: Object, konsul) {
   switch (node.type) {
     case 'text':
     case 'image':
@@ -18,7 +15,7 @@ export function makeElement (node: Object, konsul: Konsul) {
   }
 }
 
-export function applyProps (element: Node, node: Object, prevNode?: ?Object) {
+export function applyProps (element, node: Object, prevNode?: ?Object) {
   const { type, props } = node;
 
   switch (type) {

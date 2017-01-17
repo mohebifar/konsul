@@ -1,12 +1,9 @@
-import Konsul from '../Konsul';
-import Node from '../widgets/Node';
 import debounce from './utils/debounce';
 
 export class ReactKonsulIDOperations {
-  konsul: Konsul;
-  nodes: {[key:string]: Node} = {};
+  nodes: {[key:string]: Object} = {};
 
-  setKonsul (konsul: Konsul): void {
+  setKonsul (konsul): void {
     this.konsul = konsul;
 
     konsul.removeAllListeners('shouldRender');
@@ -15,7 +12,7 @@ export class ReactKonsulIDOperations {
     konsul.debounceRender = () => debouncer();
   }
 
-  getParent (parent: any): (Node|Konsul) {
+  getParent (parent: any): Object {
     if (typeof parent === 'string') {
       return this.konsul;
     } else {
@@ -27,7 +24,7 @@ export class ReactKonsulIDOperations {
     return this.nodes[id];
   }
 
-  add (id: number|string, node: Node): void {
+  add (id: number|string, node: Object): void {
     this.nodes[id] = node;
   }
 

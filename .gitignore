@@ -5,6 +5,7 @@ node_modules
 
 # production
 lib
+lib-react
 
 # misc
 .DS_Store
