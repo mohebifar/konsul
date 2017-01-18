@@ -73,7 +73,7 @@ export default class Node extends EventEmitter {
     return this.parent ? this.parent.getChildrenInOrder().filter(node => node !== this) : [];
   }
 
-  forDescendants = function (iteration: Function, includeMe: boolean = false) {
+  forDescendants (iteration: Function, includeMe: boolean = false): void {
     if (includeMe) {
       iteration(this);
     }
