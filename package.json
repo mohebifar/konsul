@@ -40,7 +40,7 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://github.com/mohebifar/konsul#readme",
+  "homepage": "https://mohebifar.github.io/konsul",
   "dependencies": {
     "eventemitter3": "^2.0.2"
   },

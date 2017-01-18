@@ -1,0 +1,43 @@
+.App {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.App-logo {
+    height: 100px;
+}
+
+.App-header {
+    border-bottom: 1px dashed #EEE;
+    margin-bottom: 15px;
+}
+
+.App-intro {
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.App-navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+.App-navigation li {
+    padding: 10px;
+}
+
+.App-navigation li a {
+    text-decoration: none;
+    color: #ff52bf;
+    font-weight: 600;
+}
+
+.App-navigation li a:hover {
+    color: #ff6dc7;
+}
