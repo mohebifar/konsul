@@ -31,6 +31,46 @@ This is what the result will look like:
 
 ![Konsul "Hello world" example](https://www.dropbox.com/s/cyzs5imu6384voc/konsul-hello-world.jpg?dl=1)
 
+## React element types
+### `text`
+This node is the only node type that accepts `string`s and `number`s as children.
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| style | [`TextStyle`](https://github.com/mohebifar/konsul/blob/master/src/types/styles.js#L13) | A plain javascript object whose keys are camel cased property names with their property value. |
+| children | `(Text|string|number)[]` | Only `Text`s, `string`s and `number`s are accepted as a Text's children |
+
+### `image`
+A Konsul node for displaying images from a url.
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| style | [`ImageStyle`](https://github.com/mohebifar/konsul/blob/master/src/types/styles.js#L20) | A plain javascript object whose keys are camel cased property names with their property value. |
+| source | `string` | The URL of the image. |
+
+### `button`
+An interactive node that responds to clicks. **Note that it only works on chrome for now.**
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| onClick | `function` | Called when the user clicks on the element. |
+| label | `string` | The label of the button. It will replace all the characters that are not acceptable for the name of a function with `_`. |
+
+### `group`
+All the children of a Group element will be wrapped inside `console.group`.
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| children | `Node[]` | All kind of elements except `string`s and `number`s are accepted. |
+
+### `container`
+This node has no specific behaviour. It works as a container and renders all its children.
+
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| children | `Node[]` | All kind of elements except `string`s and `number`s are accepted. |
+
 ## Without react
 Install `konsul` via npm:
 
@@ -63,46 +103,6 @@ konsul.append(text);
 // Render to console. The subsequent renders will occur automatically for example by updating the style or children.
 konsul.render();
 ```
-
-# React element types
-## Text
-This node is the only node type that accepts `string`s and `number`s as children.
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| style | [`TextStyle`](https://github.com/mohebifar/konsul/blob/master/src/types/styles.js#L13) | A plain javascript object whose keys are camel cased property names with their property value. |
-| children | `(Text|string|number)[]` | Only `Text`s, `string`s and `number`s are accepted as a Text's children |
-
-## Image
-A Konsul node for displaying images from a url.
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| style | [`ImageStyle`](https://github.com/mohebifar/konsul/blob/master/src/types/styles.js#L20) | A plain javascript object whose keys are camel cased property names with their property value. |
-| source | `string` | The URL of the image. |
-
-## Button
-An interactive node that responds to clicks. **Note that it only works on chrome for now.**
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| onClick | `function` | Called when the user clicks on the element. |
-| label | `string` | The label of the button. It will replace all the characters that are not acceptable for the name of a function with `_`. |
-
-## Group
-All the children of a Group element will be wrapped inside `console.group`.
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| children | `Node[]` | All kind of elements except `string`s and `number`s are accepted. |
-
-## Container
-This node has no specific behaviour. It works as a container and renders all its children.
-
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| children | `Node[]` | All kind of elements except `string`s and `number`s are accepted. |
 
 # License
 Released under the [MIT License](https://mohebifar.mit-license.org/)
