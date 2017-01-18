@@ -4,6 +4,8 @@
 
 **Konsul** is an abstraction of the browser's `console` that comes with a React renderer. It offers text styling, images, style inheritance, buttons with click interaction, etc. inside the browsers dev console.
 
+[See the live demo here](https://mohebifar.github.io/konsul/)
+
 [![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
 
 # Usage
@@ -30,6 +32,8 @@ renderToKonsul(<text style={{ color: 'red', fontWeight: 'bold' }}>Hello world!</
 This is what the result will look like:
 
 ![Konsul "Hello world" example](https://www.dropbox.com/s/cyzs5imu6384voc/konsul-hello-world.jpg?dl=1)
+
+[See more examples here](https://github.com/mohebifar/konsul/tree/master/examples/src) with the [live demo](https://mohebifar.github.io/konsul/).
 
 ## React element types
 ### `text`
