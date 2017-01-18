@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    color: #333;
 }
 
 .App-logo {
@@ -12,12 +13,29 @@
 
 .App-header {
     border-bottom: 1px dashed #EEE;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .App-intro {
+    margin-top: 10px;
+    padding-top: 15px;
     font-size: large;
-    margin-bottom: 10px;
+    border-top: 1px dashed #EEE;
+}
+
+.App-instruction {
+    margin: auto;
+    width: 330px;
+    text-align: left;
+    padding-top: 15px;
+    font-size: medium;
+}
+
+.App-instruction > div > code {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    padding-right: 20px;
 }
 
 .App-navigation {

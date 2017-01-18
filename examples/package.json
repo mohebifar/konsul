@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && touch build/.nojekyll",
     "deploy": "gh-pages -d build"
   }
 }
