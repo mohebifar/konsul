@@ -11,6 +11,7 @@ type LogData = {
 export default class Text extends Node {
   children: TextChild[];
   style: TextStyle = null;
+  type: string = 'log';
 
   append (child: TextChild): void {
     this.children.push(child);
@@ -24,6 +25,11 @@ export default class Text extends Node {
 
   setStyle (style: TextStyle): void {
     this.style = style;
+    this.konsul.emit('shouldRender');
+  }
+
+  setType (type: string): void {
+    this.type = type;
     this.konsul.emit('shouldRender');
   }
 
@@ -62,6 +68,6 @@ export default class Text extends Node {
   render (): void {
     const logData: LogData = this.getLogData();
     const string: string = logData.strings.map(string => `%c${string}`).join('');
-    console.log(string, ...logData.styles.map(makeString));
+    console[this.type](string, ...logData.styles.map(makeString));
   }
 }

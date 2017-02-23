@@ -7,7 +7,8 @@ const widgetsRegistration: WidgetRegisterContract[] = [
     widget: Widgets.Text,
     name: 'text',
     options: {
-      style: (style: Object, node: Widgets.Text) => node.setStyle(style)
+      style: (style: Object, node: Widgets.Text) => node.setStyle(style),
+      type: (type: string, node: Widgets.Text) => node.setType(type)
     }
   },
   {

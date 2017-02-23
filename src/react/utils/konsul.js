@@ -23,6 +23,9 @@ export function applyProps (element, node: Object, prevNode?: ?Object) {
       if (shouldPropUpdate('style', node, prevNode)) {
         element.setStyle(props.style);
       }
+      if (shouldPropUpdate('type', node, prevNode)) {
+        element.setType(props.type);
+      }
       break;
     case 'image':
       if (shouldPropUpdate('style', node, prevNode)) {

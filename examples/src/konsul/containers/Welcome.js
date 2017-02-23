@@ -37,6 +37,12 @@ export default class Welcome extends Component {
         <text>
           You can use react to render into the console:
         </text>
+        <text type="warn">
+          You can log in different levels
+        </text>
+        <text type="error">
+          And errors
+        </text>
         <Code code={code} />
       </container>
     );
