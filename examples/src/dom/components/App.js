@@ -31,7 +31,7 @@ class App extends Component {
         <div className="App-intro">
           Please open the console.
           <div className="App-instruction">
-            <div><code>⌘+⇧+J</code> Mac</div>
+            <div><code>⌘+⌥+J</code> Mac</div>
             <div><code>CTRL+SHIFT+J</code> Linux & Windows</div>
           </div>
         </div>
