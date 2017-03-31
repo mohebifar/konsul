@@ -7,6 +7,7 @@
     "watch": "babel src --watch --out-dir lib --ignore react",
     "watch-react": "babel src/react --watch --out-dir lib-react/lib --ignore node_modules",
     "lint": "semistandard",
+    "flow": "flow check",
     "build": "rm -rf ./lib/* && babel src -d lib --ignore react",
     "build-react": "rm -rf ./lib-react/* && babel src/react -d lib-react/lib --ignore node_modules && cp src/react/package.json lib-react/",
     "prepublish": "npm run lint && npm run build",
@@ -54,6 +55,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "eslint": "^3.13.1",
     "eslint-plugin-flowtype": "^2.30.0",
+    "flow-bin": "^0.42.0",
     "semistandard": "^9.2.1"
   }
 }
