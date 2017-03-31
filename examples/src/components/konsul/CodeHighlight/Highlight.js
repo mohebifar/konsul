@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import low from 'lowlight/lib/core';
 import { styles, mapWithDepth } from './lowlight';
 
-low.registerLanguage('js', require('highlight.js/lib/languages/javascript'));
+low.registerLanguage('jsx', require('highlight.js/lib/languages/javascript'));
 
-export default class Highlight extends Component {
+class Highlight extends Component {
   prop: {
     code: string,
     language?: string,
@@ -12,7 +12,7 @@ export default class Highlight extends Component {
   };
 
   static defaultProps = {
-    language: 'js',
+    language: 'jsx',
     style: {}
   };
 
@@ -26,3 +26,5 @@ export default class Highlight extends Component {
     );
   }
 }
+
+export default Highlight;

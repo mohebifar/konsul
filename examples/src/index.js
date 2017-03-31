@@ -1,30 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/dom/App';
 import renderToKonsul from '../../lib-react';
 import createKonsul from '../../lib';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
-import App from './dom/components/App';
-import Code from './konsul/containers/Code';
-import Welcome from './konsul/containers/Welcome';
-import Image from './konsul/containers/Image';
-import Interaction from './konsul/containers/Interaction';
-import Counter from './konsul/containers/Counter';
+import Welcome from './components/konsul/Welcome/Welcome';
+import CodeHighlight from './components/konsul/CodeHighlight/CodeHighlight';
+import Image from './components/konsul/Image/Image';
+import Interaction from './components/konsul/Interaction/Interaction';
+import Timer from './components/konsul/Timer/Timer';
+import Redux from './components/konsul/Redux/Redux';
+
 import './index.css';
 
 const konsul = createKonsul();
 
+function reducer(state = 0, action) {
+  switch (action.type) {
+    case 'INCREASE':
+      return state + 1;
+    case 'DECREASE':
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+const store = createStore(reducer);
+
 renderToKonsul(
   (
-    <Router history={hashHistory}>
-      <Route path="/">
-        <IndexRoute component={Welcome}/>
-        <Route path="/code" component={Code}/>
-        <Route path="/image" component={Image}/>
-        <Route path="/interaction" component={Interaction}/>
-        <Route path="/counter" component={Counter}/>
-      </Route>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <container>
+          <text>👇 Everything that you see below is rendered by Konsul! 👇</text>
+          <Switch>
+            <Route path="/code" component={CodeHighlight}/>
+            <Route path="/image" component={Image}/>
+            <Route path="/interaction" component={Interaction}/>
+            <Route path="/timer" component={Timer}/>
+            <Route path="/redux" component={Redux}/>
+            <Route path="/" component={Welcome}/>
+          </Switch>
+        </container>
+      </Router>
+    </Provider>
   ), konsul);
 
-ReactDOM.render(<App />,  document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root')
+);
