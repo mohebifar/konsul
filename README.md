@@ -6,7 +6,9 @@
 
 [See the live demo here](https://mohebifar.github.io/konsul/)
 
-[![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
+[![npm](https://img.shields.io/npm/v/konsul.svg)]()
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 
 # Usage
 ## With react
