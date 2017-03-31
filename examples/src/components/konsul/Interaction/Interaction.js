@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from './ProgressBar';
 
 const progressEnd = 20;
 
@@ -45,12 +45,11 @@ export default class Interaction extends Component {
         {
           !this.state.working ? <container>
             <text>
-              Progressbar sample.
-              Click on "<text style={{fontWeight: 'bold'}}>START</text>"
-              below to start progress:
-              <text style={{color: 'red'}}> (This only works on chrome)</text>
+              Click on the "<text style={{fontWeight: 'bold'}}>START_ClickHere</text>"
+              text below to start progress:
+              <text style={{color: 'red'}}> (This works only on chrome)</text>
             </text>
-            <button onClick={this.handleStart.bind(this)} label="START - Click here"/>
+            <button onClick={this.handleStart.bind(this)} label="START_ClickHere"/>
           </container> : null
         }
         {this.state.working ? this.renderProgressBar() : null}
