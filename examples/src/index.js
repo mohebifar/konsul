@@ -13,6 +13,7 @@ import Image from './components/konsul/Image/Image';
 import Interaction from './components/konsul/Interaction/Interaction';
 import Timer from './components/konsul/Timer/Timer';
 import Redux from './components/konsul/Redux/Redux';
+import StyledComponent from './components/konsul/StyledComponent/StyledComponent';
 
 import './index.css';
 
@@ -43,6 +44,7 @@ renderToKonsul(
             <Route path="/interaction" component={Interaction}/>
             <Route path="/timer" component={Timer}/>
             <Route path="/redux" component={Redux}/>
+            <Route path="/styled" component={StyledComponent}/>
             <Route path="/" component={Welcome}/>
           </Switch>
         </container>

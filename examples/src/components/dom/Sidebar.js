@@ -51,6 +51,7 @@ const Sidebar = () => (
     <Link to="/timer">Stateful Components</Link>
     <Link to="/interaction">Interaction</Link>
     <Link to="/redux">Redux</Link>
+    <Link to="/styled">Styled Components</Link>
     <Link to="/router">Router</Link>
     <Hr/>
     <a href="https://github.com/mohebifar/konsul">Source on Github</a>
