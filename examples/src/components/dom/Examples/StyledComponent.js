@@ -1,6 +1,9 @@
 import React from 'react';
 import Highlight from '../Highlight';
 
+const codeLink = 'https://github.com/mohebifar/konsul/blob/b0d459ea00ffc5320b2a47df00e2dda222f24a2c/examples/src'
+  + '/components/konsul/StyledComponent/KonsulStyledComponent/styledComponentKonsul.js';
+
 const codeString = `import styled from './KonsulStyledComponent/styledComponentKonsul'; // This is my own implementation of styled components
 
 const StyledText = styled.text\`
@@ -48,8 +51,8 @@ const Interaction = () => (
     <h2>Styled Components 💅</h2>
     <div>
       I used <a href="https://github.com/styled-components/styled-components">styled-components</a>'s code for
-      React native and ported it to Konsul just as an experiment. Of course, it is not an official port and depends on
-      internal APIs of styled-components which is not safe.
+      React native and <a href={codeLink}>ported it to Konsul</a> just as an experiment.
+      Of course, it is not an official port and depends on internal APIs of styled-components (which is not safe).
     </div>
     <Highlight>{codeString}</Highlight>
   </div>

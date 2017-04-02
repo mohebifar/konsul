@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
   font-weight: 300;
   background-color: #FFFFFF;
+  overflow-y: scroll;
 }
