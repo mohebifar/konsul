@@ -9,6 +9,7 @@
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
 [![npm](https://img.shields.io/npm/v/konsul.svg)]()
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
+[![gitcheese.com](https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg)](https://www.gitcheese.com/donate/users/6104558/repos/78808986)
 
 # Usage
 ## With react
