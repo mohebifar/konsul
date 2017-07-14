@@ -1,0 +1,58 @@
+{
+  "name": "konsul",
+  "version": "1.6.1",
+  "description": "The power you never had with console.log",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "babel src --watch --out-dir lib",
+    "build": "rm -rf ./lib/* && babel src -d lib",
+    "lint": "semistandard",
+    "flow": "flow check",
+    "prepublish": "npm run lint && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohebifar/konsul.git"
+  },
+  "keywords": [
+    "console",
+    "devtools",
+    "konsul"
+  ],
+  "author": "Mohamad Mohebifar",
+  "license": "MIT",
+  "semistandard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "flowtype"
+    ],
+    "ignore": [
+      "lib",
+      "examples"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/mohebifar/konsul/issues"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://mohebifar.github.io/konsul",
+  "dependencies": {
+    "eventemitter3": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.13.1",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "flow-bin": "^0.42.0",
+    "semistandard": "^9.2.1"
+  }
+}
