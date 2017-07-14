@@ -1,6 +1,5 @@
 [ignore]
 .*/lib/.*
-.*/lib-react/.*
 
 [include]
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/dom/App';
-import renderToKonsul from '../../lib-react';
-import createKonsul from '../../lib';
+import renderToKonsul from '../../packages/react-konsul';
+import createKonsul from '../../packages/konsul';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';

@@ -1,0 +1,11 @@
+[ignore]
+.*/lib/.*
+
+[include]
+
+[libs]
+
+[options]
+suppress_comment=.*\\$FlowFixMe
+suppress_comment=.*\\$FlowInvalidInputTest
+unsafe.enable_getters_and_setters=true
