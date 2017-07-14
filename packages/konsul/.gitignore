@@ -1,9 +1,10 @@
 # dependencies
 node_modules
 
+lib
+
 # misc
 .DS_Store
 .env
-lerna-debug.log
 npm-debug.log
 .idea
