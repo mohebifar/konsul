@@ -1,6 +1,6 @@
 import ReactMultiChild from 'react/lib/ReactMultiChild';
 import ReactKonsulIDOperations from './ReactKonsulIDOperations';
-import { makeElement, applyProps } from './utils/konsul';
+import { makeElement, applyProps } from '../shared/konsul';
 
 let globalCounter = 1;
 

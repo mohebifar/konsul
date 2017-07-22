@@ -1,4 +1,4 @@
-import debounce from './utils/debounce';
+import debounce from '../shared/debounce';
 
 export class ReactKonsulIDOperations {
   nodes: {[key:string]: Object} = {};

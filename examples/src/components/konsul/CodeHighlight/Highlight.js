@@ -19,6 +19,8 @@ class Highlight extends Component {
   render (): void {
     const { code, language, style } = this.props;
     const codeTree = low.highlight(language, code);
+    console.log(codeTree)
+    
     return (
       <text style={{...styles.main, ...style}}>
         {codeTree.value.map(mapWithDepth(0))}
