@@ -40,7 +40,8 @@
   },
   "homepage": "https://github.com/mohebifar/konsul#readme",
   "dependencies": {
-    "react": "^15.4.2"
+    "react": "16.0.0-alpha.3",
+    "react-dom": "16.0.0-alpha.3"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

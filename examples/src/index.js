@@ -44,7 +44,7 @@ renderToKonsul(
             <Route path="/interaction" component={Interaction}/>
             <Route path="/timer" component={Timer}/>
             <Route path="/redux" component={Redux}/>
-            <Route path="/styled" component={StyledComponent}/>
+            <Route path="/styled" component={StyledComponent}/> 
             <Route path="/" component={Welcome}/>
           </Switch>
         </container>
