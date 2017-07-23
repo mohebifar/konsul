@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://www.dropbox.com/s/3wfhnivj3pad9hv/konsul-logo-small.png?dl=1" alt="Konsul" />
-</p>
+![Konsul Logo](konsul-logo.png)
 
 **Konsul** is an abstraction of the browser's `console` that comes with a React renderer. It offers text styling, images, style inheritance, buttons with click interaction, etc. inside the browsers dev console.
 
@@ -9,7 +7,6 @@
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
 [![npm](https://img.shields.io/npm/v/konsul.svg)]()
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
-[![gitcheese.com](https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg)](https://www.gitcheese.com/donate/users/6104558/repos/78808986)
 
 # Usage
 ## With react
@@ -34,7 +31,7 @@ renderToKonsul(<text style={{ color: 'red', fontWeight: 'bold' }}>Hello world!</
 
 This is what the result will look like:
 
-![Konsul "Hello world" example](https://www.dropbox.com/s/cyzs5imu6384voc/konsul-hello-world.jpg?dl=1)
+![Konsul "Hello world" example](konsul-screenshot.jpg)
 
 [See more examples here](https://github.com/mohebifar/konsul/tree/master/examples/src) with the [live demo](https://mohebifar.github.io/konsul/).
 
